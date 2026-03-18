@@ -77,3 +77,22 @@ npm run dev
 npm run lint
 npm run build
 ```
+
+## Feeds & APIs
+- `GET /rss.xml` – generates an RSS 2.0 feed for all markdown posts. The marketing site consumes this from `https://blogs.edgeopslabs.com/rss.xml`.
+- `GET /api/posts` – returns simplified JSON metadata for every post (title, slug, tags, reading time, etc.).
+- `GET /api/posts/highlights` – returns `{ latest, topImpressions }`, combining markdown metadata with real-time impression counts.
+
+Use these endpoints for any downstream automation (community cards, dashboards, etc.).
+
+## Impressions telemetry config
+View counts are recorded automatically whenever someone opens `/post/[slug]`. The tracker writes to Upstash Redis through the `/api/posts/[slug]/impression` route.
+
+Set the following environment variables in `.env.local` (and in your deployment platform):
+
+```bash
+UPSTASH_REDIS_REST_URL="https://<your-upstash-rest-url>"
+UPSTASH_REDIS_REST_TOKEN="<your-upstash-rest-token>"
+```
+
+Without these values the server will throw on startup, and impressions/highlight APIs will not work.
