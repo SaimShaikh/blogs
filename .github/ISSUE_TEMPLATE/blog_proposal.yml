@@ -1,0 +1,80 @@
+name: "✍️ Blog Proposal"
+description: "Pitch a high-signal technical article for EdgeOps Blog."
+title: "[PROPOSAL]: "
+labels:
+  - "editorial:proposal"
+  - "area:content"
+  - "status:triage"
+body:
+  - type: input
+    id: post_title
+    attributes:
+      label: "Post Title"
+      description: "Working title for your article."
+      placeholder: "e.g. Zero-downtime deploys with Argo Rollouts"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: content_type
+    attributes:
+      label: "Content Type"
+      description: "Which best describes your post?"
+      options:
+        - "Technical Deep-Dive"
+        - "Tutorial / How-To"
+        - "Case Study"
+        - "Opinion / Commentary"
+    validations:
+      required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: "Summary"
+      description: "2–3 sentences — the key message and what readers will take away."
+      placeholder: "Readers will learn how to…"
+    validations:
+      required: true
+
+  - type: input
+    id: tags
+    attributes:
+      label: "Target Tags"
+      description: "Comma-separated tags (used for site metadata)."
+      placeholder: "kubernetes, sre, ai-ops, platform-engineering"
+    validations:
+      required: false
+
+  - type: textarea
+    id: outline
+    attributes:
+      label: "Proposed Outline"
+      description: "High-level section headings."
+      value: |
+        - **Introduction**: Context and the problem being solved.
+        - **Core Section 1**: ...
+        - **Core Section 2**: ...
+        - **Conclusion**: Key takeaways and future outlook.
+    validations:
+      required: true
+
+  - type: textarea
+    id: author_bio
+    attributes:
+      label: "Author Bio"
+      description: "Brief introduction — who you are and your background."
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: "Submission Checklist"
+      options:
+        - label: "I have read the [Contributing Guide](../../CONTRIBUTING.md)"
+          required: true
+        - label: "This topic has not been covered in a recent post"
+          required: true
+        - label: "I am available to incorporate editorial feedback"
+          required: true
