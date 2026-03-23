@@ -74,9 +74,6 @@ export default async function PostDetailPage({
             <span>{post.author}</span>
             <span>{post.date}</span>
             <span>{post.readingTimeText}</span>
-            <span>
-              {post.newsletter ? "Newsletter: Enabled" : "Newsletter: Disabled"}
-            </span>
           </div>
         </header>
 
