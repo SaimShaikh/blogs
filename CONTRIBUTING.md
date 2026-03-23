@@ -2,6 +2,36 @@
 
 Thank you for your interest in contributing to the EdgeOps Blog! We aim to provide high-signal technical content for the modern engineering community.
 
+## Project Tracking
+
+All content and website work is tracked on the **[EdgeOps Blog GitHub Project](https://github.com/orgs/EdgeOpslabs/projects)**.  
+Every issue and pull request is automatically added to the board when it is opened.  
+Ask a maintainer for the direct project link if you need it.
+
+### Boards
+
+| Board | Purpose |
+|-------|---------|
+| **Editorial Pipeline** | Tracks blog post proposals through publication. |
+| **Website Enhancements** | Tracks feature requests, bugs, and UX improvements. |
+
+### Issue Templates
+
+Use the correct template when opening an issue:
+
+| Template | Title prefix | Labels applied |
+|----------|-------------|----------------|
+| Blog Proposal | `[PROPOSAL]: ` | `editorial:proposal`, `area:content` |
+| Website Enhancement | `[ENHANCEMENT]: ` | `type:enhancement`, `area:website` |
+| Bug Report | `[BUG]: ` | `type:bug`, `area:website` |
+
+### Labels
+
+We use a structured labelling system — see [`.github/labels.yml`](.github/labels.yml) for the full list.  
+The [`label-sync`](.github/workflows/label-sync.yml) workflow keeps repository labels in sync with that file automatically on every push to `main`.
+
+---
+
 ## Editorial Workflow
 
 To ensure a high standard of quality and consistency, we follow a structured editorial process. **Please do not open a Pull Request without an approved proposal.**
@@ -43,13 +73,54 @@ To ensure a high standard of quality and consistency, we follow a structured edi
 
 ## Labeling Strategy
 
-We use labels to manage the lifecycle of content:
-- `editorial:proposal`: Initial content idea.
-- `editorial:approved`: Ready for writing.
-- `editorial:review`: PR submitted and undergoing review.
-- `editorial:published`: Merged and live on the platform.
-- `type:technical`: Deep-dive technical content.
-- `type:case-study`: Real-world implementation stories.
+We use labels to manage the lifecycle of content. The full label set is defined in [`.github/labels.yml`](.github/labels.yml) and is synced automatically.
+
+**Editorial lifecycle**
+| Label | Meaning |
+|-------|---------|
+| `editorial:proposal` | Initial content idea submitted. |
+| `editorial:approved` | Proposal approved — ready to write. |
+| `editorial:in-progress` | Author is writing. |
+| `editorial:review` | PR submitted and under review. |
+| `editorial:published` | Merged and live. |
+
+**Content type**
+| Label | Meaning |
+|-------|---------|
+| `type:technical` | Deep-dive technical content. |
+| `type:case-study` | Real-world implementation story. |
+| `type:tutorial` | Step-by-step guide. |
+| `type:opinion` | Opinion / editorial piece. |
+
+**Website / platform**
+| Label | Meaning |
+|-------|---------|
+| `type:bug` | Broken or incorrect behaviour. |
+| `type:enhancement` | New feature or improvement. |
+| `area:website` | Affects the blog platform. |
+| `area:infrastructure` | Affects CI/CD or deployment. |
+| `area:newsletter` | Affects the newsletter system. |
+
+**Priority**
+`priority:critical` → `priority:high` → `priority:medium` → `priority:low`
+
+---
+
+## Project Management Setup (Maintainers)
+
+To enable automated project board integration:
+
+1. **Create a GitHub Project** at `https://github.com/orgs/EdgeOpslabs/projects/new`.  
+   Create two views — *Editorial Pipeline* and *Website Enhancements* — each with a **Status** field.
+
+2. **Add the project URL** as a repository Actions variable:  
+   `Settings → Secrets and variables → Actions → Variables`  
+   Name: `PROJECT_URL`, Value: `https://github.com/orgs/EdgeOpslabs/projects/<N>`
+
+3. **Create a PAT** with `project` and `repo` scopes, then add it as a repository secret:  
+   Name: `PROJECT_TOKEN`
+
+Once configured, the [`project-automation`](.github/workflows/project-automation.yml) workflow will automatically add every new issue and PR to the board.
 
 ---
 Questions? Open an issue or contact the maintainers.
