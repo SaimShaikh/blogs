@@ -12,6 +12,8 @@ tags: ["kubernetes", "sre", "devops"]
 
 Most platform teams fail when they optimize for governance before proving developer value.
 
+![alt text](/post/test.jpg)
+
 ## Recommended sequence
 
 1. Start with one high-friction use case.
@@ -19,3 +21,14 @@ Most platform teams fail when they optimize for governance before proving develo
 3. Expand standards only after measurable gains.
 
 This sequence reduces resistance and increases long-term platform adoption.
+
+```js
+export function ThemeProvider({
+    children,
+    ...props
+}: React.ComponentProps<typeof NextThemesProvider>) {
+    return <NextThemesProvider {...props}>{children}</NextThemesProvider>;
+}
+```
+hello dosto `echo`
+
