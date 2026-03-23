@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📝 Write for EdgeOps
+    url: https://github.com/EdgeOpslabs/blogs/issues/new?template=blog_proposal.md
+    about: Pitch a high-signal technical article for the EdgeOps Blog.
+  - name: 💬 Community Discussion
+    url: https://github.com/EdgeOpslabs/blogs/discussions
+    about: Ask questions and discuss ideas with the EdgeOps community.

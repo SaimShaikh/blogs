@@ -1,0 +1,138 @@
+# Labels for EdgeOps Blog
+# Used by the label-sync workflow (.github/workflows/label-sync.yml)
+# Categories: editorial lifecycle, content type, website area, status, priority
+
+# ── Editorial lifecycle ──────────────────────────────────────────────────────
+- name: "editorial:proposal"
+  color: "0075ca"
+  description: "Content idea pitched and awaiting review."
+
+- name: "editorial:approved"
+  color: "00C853"
+  description: "Proposal approved — author may begin writing."
+
+- name: "editorial:in-progress"
+  color: "e4e669"
+  description: "Author is actively writing the post."
+
+- name: "editorial:review"
+  color: "d93f0b"
+  description: "PR submitted and undergoing editorial/technical review."
+
+- name: "editorial:published"
+  color: "0e8a16"
+  description: "Post merged and live on the platform."
+
+# ── Content type ─────────────────────────────────────────────────────────────
+- name: "type:technical"
+  color: "1d76db"
+  description: "Deep-dive technical content."
+
+- name: "type:case-study"
+  color: "5319e7"
+  description: "Real-world implementation story."
+
+- name: "type:tutorial"
+  color: "006b75"
+  description: "Step-by-step tutorial or how-to guide."
+
+- name: "type:opinion"
+  color: "bfd4f2"
+  description: "Opinion piece or editorial commentary."
+
+# ── Website area ─────────────────────────────────────────────────────────────
+- name: "area:website"
+  color: "c5def5"
+  description: "Relates to the blog website / platform."
+
+- name: "area:content"
+  color: "f9d0c4"
+  description: "Relates to editorial content or posts."
+
+- name: "area:infrastructure"
+  color: "fef2c0"
+  description: "Relates to deployment, CI/CD, or infrastructure."
+
+- name: "area:newsletter"
+  color: "e4e669"
+  description: "Relates to the newsletter dispatch system."
+
+# ── Issue / PR type ──────────────────────────────────────────────────────────
+- name: "type:bug"
+  color: "d73a4a"
+  description: "Something is broken or not working as expected."
+
+- name: "type:enhancement"
+  color: "a2eeef"
+  description: "New feature or improvement request."
+
+- name: "type:documentation"
+  color: "0075ca"
+  description: "Improvements or additions to documentation."
+
+- name: "type:chore"
+  color: "e4e669"
+  description: "Maintenance task (deps, refactor, housekeeping)."
+
+# ── Status ───────────────────────────────────────────────────────────────────
+- name: "status:triage"
+  color: "ededed"
+  description: "Needs initial review and classification."
+
+- name: "status:needs-info"
+  color: "fef2c0"
+  description: "Waiting for more information from the author."
+
+- name: "status:in-progress"
+  color: "e4e669"
+  description: "Actively being worked on."
+
+- name: "status:blocked"
+  color: "b60205"
+  description: "Blocked by another issue or external dependency."
+
+- name: "status:ready"
+  color: "0e8a16"
+  description: "Ready to be worked on or merged."
+
+- name: "status:complete"
+  color: "0e8a16"
+  description: "Work is done — published or resolved."
+
+# ── Priority ─────────────────────────────────────────────────────────────────
+- name: "priority:critical"
+  color: "b60205"
+  description: "Must be addressed immediately."
+
+- name: "priority:high"
+  color: "d93f0b"
+  description: "High priority — address in the current cycle."
+
+- name: "priority:medium"
+  color: "fbca04"
+  description: "Medium priority — address in the next cycle."
+
+- name: "priority:low"
+  color: "c2e0c6"
+  description: "Low priority — nice to have."
+
+# ── Housekeeping ─────────────────────────────────────────────────────────────
+- name: "good first issue"
+  color: "7057ff"
+  description: "Good for newcomers and first-time contributors."
+
+- name: "help wanted"
+  color: "008672"
+  description: "Extra attention or community help is needed."
+
+- name: "duplicate"
+  color: "cfd3d7"
+  description: "This issue or PR already exists."
+
+- name: "wontfix"
+  color: "ffffff"
+  description: "This will not be worked on."
+
+- name: "invalid"
+  color: "e4e669"
+  description: "This doesn't seem right."

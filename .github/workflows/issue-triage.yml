@@ -1,0 +1,46 @@
+name: Issue Triage
+
+# Automatically classifies and routes new issues to the right area.
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Classify issue by title prefix
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = context.payload.issue.title;
+            const existingLabels = context.payload.issue.labels.map(l => l.name);
+            const labelsToAdd = [];
+
+            // Route by title prefix
+            if (/^\[PROPOSAL\]/i.test(title)) {
+              if (!existingLabels.includes('editorial:proposal')) labelsToAdd.push('editorial:proposal');
+              if (!existingLabels.includes('area:content'))       labelsToAdd.push('area:content');
+            } else if (/^\[BUG\]/i.test(title)) {
+              if (!existingLabels.includes('type:bug'))     labelsToAdd.push('type:bug');
+              if (!existingLabels.includes('area:website')) labelsToAdd.push('area:website');
+            } else if (/^\[ENHANCEMENT\]/i.test(title)) {
+              if (!existingLabels.includes('type:enhancement')) labelsToAdd.push('type:enhancement');
+              if (!existingLabels.includes('area:website'))     labelsToAdd.push('area:website');
+            } else if (/^\[DOCS\]/i.test(title)) {
+              if (!existingLabels.includes('type:documentation')) labelsToAdd.push('type:documentation');
+            } else if (/^\[CHORE\]/i.test(title)) {
+              if (!existingLabels.includes('type:chore')) labelsToAdd.push('type:chore');
+            }
+
+            if (labelsToAdd.length > 0) {
+              await github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.issue.number,
+                labels: labelsToAdd,
+              });
+            }
