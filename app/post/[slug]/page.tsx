@@ -1,11 +1,12 @@
+/* eslint-disable @next/next/no-img-element */
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { getAllPosts, getPostBySlug } from "@/lib/posts";
+import { getAllPosts } from "@/lib/posts";
 import { PostViewTracker } from "@/components/blog/PostViewTracker";
-import { CodeBlock } from "@/components/blog/CodeBlock";
+import { CodeBlock } from "@/components/blog/CodeBlockClient";
 import { NewsletterSignup } from "@/components/blog/NewsletterSignup";
 import { SocialFollow } from "@/components/blog/SocialFollow";
 
@@ -20,8 +21,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const post = await getPostBySlug(slug);
-
+  const post = (await getAllPosts()).find((p) => p.slug === slug);
   if (!post) {
     return { title: "Post not found | EdgeOps Blog" };
   }
@@ -91,13 +91,13 @@ export default async function PostDetailPage({
             components={{
               img(props) {
                 return (
-                  <div className="my-10 w-full overflow-hidden rounded-2xl border border-card-border bg-background/50">
+                  <span className="my-10 w-full overflow-hidden rounded-2xl border border-card-border bg-background/50 block">
                     <img
                       {...props}
                       alt={props.alt || "Blog Image"}
                       className="block !m-0 max-h-[500px] w-full !rounded-none !border-0 object-cover"
                     />
-                  </div>
+                  </span>
                 );
               },
               pre({ children }) {

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import { ArrowRight, Radar, Sparkles, SquareTerminal } from "lucide-react";
 import { getAllPosts } from "@/lib/posts";
