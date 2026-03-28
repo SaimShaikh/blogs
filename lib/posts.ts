@@ -7,6 +7,7 @@ export type PostFrontmatter = {
   title: string;
   description: string;
   image: string;
+  thumbnail: string;
   author: string;
   date: string;
   newsletter: boolean;
@@ -25,6 +26,7 @@ function parseFrontmatter(data: Record<string, unknown>, slug: string): PostFron
   const title = typeof data.title === "string" ? data.title : "Untitled";
   const description = typeof data.description === "string" ? data.description : "";
   const image = typeof data.image === "string" ? data.image : "/logo.png";
+  const thumbnail = typeof data.thumbnail === "string" ? data.thumbnail : image;
   const author = typeof data.author === "string" ? data.author : "EdgeOps Labs";
   const date = typeof data.date === "string" ? data.date : new Date().toISOString().slice(0, 10);
   const newsletter = typeof data.newsletter === "boolean" ? data.newsletter : false;
@@ -34,7 +36,7 @@ function parseFrontmatter(data: Record<string, unknown>, slug: string): PostFron
     throw new Error(`Missing title in post: ${slug}`);
   }
 
-  return { title, description, image, author, date, newsletter, tags };
+  return { title, description, image, thumbnail, author, date, newsletter, tags };
 }
 
 export async function getAllPosts(): Promise<BlogPost[]> {

@@ -79,10 +79,10 @@ export const FooterSection = () => {
                                 <FooterLink href="https://discord.gg/edgeopslabs" label="Discord" external />
                             </li>
                             <li>
-                                <FooterLink href="https://youtube.com/@iemafzalhassan" label="YouTube" external />
+                                <FooterLink href="https://x.com/EdgeopsL46234" label="Twitter / X" external />
                             </li>
                             <li>
-                                <FooterLink href="https://x.com/iemafzalhassan" label="Twitter / X" external />
+                                <FooterLink href="https://www.linkedin.com/company/edgeops-labs/" label="LinkedIn" external />
                             </li>
                         </ul>
                     </div>
@@ -94,13 +94,13 @@ export const FooterSection = () => {
                         </h4>
                         <ul className="space-y-3 text-sm text-brand-text/60">
                             <li>
-                                <FooterLink href="https://www.edgeopslabs.com/about" label="Privacy Policy" external />
+                                <FooterLink href="/privacy" label="Privacy Policy" />
                             </li>
                             <li>
-                                <FooterLink href="https://www.edgeopslabs.com/about" label="Terms of Service" external />
+                                <FooterLink href="/terms" label="Terms of Service" />
                             </li>
                             <li>
-                                <FooterLink href="https://www.edgeopslabs.com/community" label="Code of Conduct" external />
+                                <FooterLink href="/code-of-conduct" label="Code of Conduct" />
                             </li>
                         </ul>
                     </div>

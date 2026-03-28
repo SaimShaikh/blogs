@@ -11,7 +11,7 @@ import { ThemeToggle } from "./ThemeToggle";
 const NAV_LINKS = [
     { href: "/", label: "HOME" },
     { href: "/post", label: "POSTS" },
-    { href: "https://www.edgeopslabs.com", label: "WEBSITE", external: true },
+    { href: "https://www.edgeopslabs.com", label: "BACK", external: true },
 ];
 
 export function Navbar() {

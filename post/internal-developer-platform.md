@@ -1,7 +1,8 @@
 ---
 title: "Internal Developer Platform Without Slowing Delivery"
 description: "Practical principles for building a platform that improves reliability and speed together."
-image: "/post/docker_services.png"
+image: "/images/blogs/docker_services.png"
+thumbnail: "/images/thumbnails/docker_services.png"
 author: "EdgeOps Labs"
 date: "2026-03-15"
 newsletter: false
@@ -12,7 +13,7 @@ tags: ["kubernetes", "sre", "devops"]
 
 Most platform teams fail when they optimize for governance before proving developer value.
 
-![alt text](/post/test.jpg)
+![alt text](/images/blogs/test.jpg)
 
 ## Recommended sequence
 
@@ -31,4 +32,4 @@ export function ThemeProvider({
 }
 ```
 hello dosto `echo`
-
+hello 

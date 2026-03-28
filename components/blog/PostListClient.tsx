@@ -73,9 +73,9 @@ export function PostListClient({ posts, tags }: PostListClientProps) {
         {filteredPosts.map((post) => (
           <article key={post.slug} className="group flex flex-col justify-between overflow-hidden rounded-[1.5rem] border border-card-border bg-card/40 backdrop-blur-md transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-primary/50 hover:bg-card hover:shadow-xl hover:shadow-brand-primary/10">
             <div className="relative aspect-[2/1] w-full overflow-hidden border-b border-card-border bg-card">
-              {post.image && post.image !== "/logo.png" ? (
+              {post.thumbnail && post.thumbnail !== "/logo.png" ? (
                 <>
-                  <img src={post.image} alt={post.title} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <img src={post.thumbnail} alt={post.title} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-60 transition-opacity duration-500 group-hover:opacity-40" />
                 </>
               ) : (
