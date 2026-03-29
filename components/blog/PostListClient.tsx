@@ -5,6 +5,7 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import { Search, Filter, ArrowRight } from "lucide-react";
 import type { BlogPost } from "@/lib/posts";
+import PixelCard from "./PixelCard";
 
 type PostListClientProps = {
   posts: BlogPost[];

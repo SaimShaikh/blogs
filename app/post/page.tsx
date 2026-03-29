@@ -1,6 +1,7 @@
 import { PostListClient } from "@/components/blog/PostListClient";
 import { getAllPosts, getAllTags } from "@/lib/posts";
 import { Sparkles } from "lucide-react";
+import PixelCard from "@/components/blog/PixelCard";
 
 export default async function PostIndexPage() {
   const [posts, tags] = await Promise.all([getAllPosts(), getAllTags()]);
@@ -8,7 +9,7 @@ export default async function PostIndexPage() {
   return (
     <main className="min-h-screen pt-32 pb-20">
       <section className="container mx-auto px-4">
-        <div className="relative overflow-hidden rounded-[2.5rem] border border-card-border bg-card p-10 md:p-14 lg:p-16 shadow-2xl">
+        <PixelCard variant="blue" className="relative overflow-hidden rounded-[2.5rem] border border-card-border bg-card p-10 md:p-14 lg:p-16 shadow-2xl">
           <div className="pointer-events-none absolute -left-20 -top-20 h-96 w-96 rounded-full bg-brand-primary/20 blur-[120px]" />
           <div className="relative z-10">
             <div className="inline-flex w-fit items-center gap-2 rounded-full border border-brand-primary/30 bg-brand-primary/5 px-4 py-1.5 font-mono text-xs uppercase tracking-[0.2em] text-brand-primary backdrop-blur-md">
@@ -22,7 +23,7 @@ export default async function PostIndexPage() {
               Search and filter technical notes from EdgeOps Labs.
             </p>
           </div>
-        </div>
+        </PixelCard>
       </section>
 
       <section className="container mx-auto px-4 mt-8">

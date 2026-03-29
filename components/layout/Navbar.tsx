@@ -8,10 +8,9 @@ import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "./ThemeToggle";
 
-const NAV_LINKS = [
+const NAV_LINKS: { href: string; label: string; external?: boolean }[] = [
     { href: "/", label: "HOME" },
     { href: "/post", label: "POSTS" },
-    { href: "https://www.edgeopslabs.com", label: "BACK", external: true },
 ];
 
 export function Navbar() {
